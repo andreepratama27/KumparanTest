@@ -1,0 +1,56 @@
+html {
+  font-size: 14px;
+}
+
+body {
+  font-weight: 400;
+  background-color: #f7f7f7;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+textarea {
+  resize: none;
+  box-shadow: none !important;
+}
+
+input {
+  box-shadow: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb {
+  ul {
+    margin-left: 0;
+
+    li:last-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.panel {
+  .panel-heading {
+    margin-bottom: 0 !important;
+  }
+  .panel-block {
+    background-color: #fff;
+    margin-bottom: 0 !important;
+  }
+}
