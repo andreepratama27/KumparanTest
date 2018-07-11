@@ -4,7 +4,7 @@ html {
 
 body {
   font-weight: 400;
-  background-color: #f7f7f7;
+  background-color: #f7f8fc;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -52,5 +52,24 @@ h6 {
   .panel-block {
     background-color: #fff;
     margin-bottom: 0 !important;
+
+    &:first-child {
+      border-top: 0;
+    }
+
+    &:last-child {
+    }
   }
+}
+
+.column.content {
+  background-color: #f7f7f7;
+}
+
+nav.navbar {
+  height: 4.4rem;
+}
+
+.remove-padding {
+  padding-left: 0;
 }

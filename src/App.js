@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from "react";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Wrapper from "./components/Wrapper";
-import Dashboard from "./scenes/dashboard/components/Dashboard";
-import Users from "./scenes/users/components/Users";
-import Posts from "./scenes/posts/components/Posts";
+import DashboardContainer from "./scenes/dashboard/containers/DashboardContainer";
+import UsersContainer from "./scenes/users/containers/UsersContainer";
+import UsersDetailContainer from "./scenes/users/containers/UsersDetailContainer";
+import PostsContainer from "./scenes/posts/containers/PostsContainer";
 import Albums from "./scenes/albums/components/Albums";
 
 class App extends Component {
@@ -11,9 +12,10 @@ class App extends Component {
     return (
       <Router>
         <Wrapper>
-          <Route exact path="/" component={Dashboard} />
-          <Route path="/users" component={Users} />
-          <Route path="/posts" component={Posts} />
+          <Route exact path="/" component={DashboardContainer} />
+          <Route path="/users" component={UsersContainer} />
+          <Route path="/user/:id" component={UsersDetailContainer} />
+          <Route path="/posts" component={PostsContainer} />
           <Route path="/albums" component={Albums} />
         </Wrapper>
       </Router>

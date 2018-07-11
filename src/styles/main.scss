@@ -2,14 +2,98 @@
 @import "./variables.scss";
 
 aside.sidemenu {
-  background-color: $light;
+  background-color: $dark;
   height: 100vh;
 
   .menu {
     padding: 15px;
+    .menu-list {
+      li a {
+        color: #dadada;
+
+        &:hover {
+          background-color: #00d1b2;
+          color: $light;
+        }
+      }
+    }
   }
 }
 
 main.content {
   padding: 20px;
+}
+
+.panel-block--list {
+  height: 18rem;
+  overflow-y: scroll;
+}
+
+.panel-block--divide {
+  display: flex;
+  justify-content: space-between;
+
+  &_right {
+    a,
+    a:hover,
+    a:visited {
+      color: cornflowerblue;
+    }
+  }
+}
+
+/* users detail */
+.header-big {
+  width: 100%;
+}
+.column-header {
+  background-color: $light;
+}
+.column-tabs {
+  background-color: $light;
+  border-top: 1px solid $border;
+  width: 100%;
+  .tabs {
+    ul li {
+      width: 14rem;
+    }
+  }
+}
+
+.image-place,
+.description-place {
+  height: 14rem;
+}
+
+.image-place {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__id {
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $border;
+    border-radius: 100%;
+    font-size: 24px;
+  }
+}
+
+.description-place {
+  padding: 35px 20px;
+
+  .user-name {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .columns-desc {
+    column {
+      color: $text;
+      font-weight: lighter;
+    }
+  }
 }
