@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { initPostsUser } from "@scenes/users/actions/";
+import { initPostsUser, deletePostsUser } from "@scenes/users/actions/";
 import UsersPostsComponent from "@scenes/users/components/UsersPostsComponent";
 
 const mapStateToProps = state => ({
@@ -10,6 +10,10 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   getUserPosts(data) {
     dispatch(initPostsUser(data));
+  },
+
+  deletePostsUser(data) {
+    dispatch(deletePostsUser(data));
   }
 });
 

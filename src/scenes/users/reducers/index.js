@@ -33,6 +33,19 @@ const reducers = (state = [], action) => {
       });
     }
 
+    case types.DELETE_POSTS_USER: {
+      // let findData = state.userPosts.filter(v => v.id !== action.data.idUser);
+      let findUser = state.userPosts.filter(v => {
+        return v.userId !== action.data.idUser;
+      });
+
+      let findPost = findUser.filter(v => v.id !== action.data.id);
+
+      return Object.assign({}, state, {
+        userPosts: findPost
+      });
+    }
+
     default: {
       return state;
     }

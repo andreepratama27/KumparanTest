@@ -32,6 +32,29 @@ const reducers = (state = initialState, action) => {
       });
     }
 
+    case types.ADD_COMMENT: {
+      return Object.assign({}, state, {
+        comments: [
+          ...state.comments,
+          {
+            name: "lorem ipsum",
+            title: action.data.title,
+            body: action.data.body
+          }
+        ]
+      });
+    }
+
+    case types.DELETE_COMMENT: {
+      let newData = state.comments.filter(v => {
+        return v.id !== action.data.idComment;
+      });
+
+      return Object.assign({}, state, {
+        comments: newData
+      });
+    }
+
     default: {
       return state;
     }

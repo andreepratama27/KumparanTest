@@ -72,14 +72,6 @@ class DashboardComponent extends Component {
           <div className="column is-6">
             <nav className="panel">
               <p className="panel-heading">Posts</p>
-              <div className="panel-block">
-                <p className="control has-icons-left">
-                  <input className="input" type="text" placeholder="Search" />
-                  <span className="icon is-small is-left">
-                    <i className="fa fa-search" aria-hidden="true" />
-                  </span>
-                </p>
-              </div>
               <div className="panel-block--list">
                 {dashboard &&
                   dashboard.posts.map((v, keys) => (

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { viewPost, initComment } from "@scenes/posts/actions/";
+import { viewPost, initComment, addComment } from "@scenes/posts/actions/";
 import PostsShowComponent from "@scenes/posts/components/PostsShowComponent";
 
 const mapStateToProps = state => ({
@@ -14,6 +14,10 @@ const mapDispatchToProps = dispatch => ({
 
   initPostComment(id) {
     dispatch(initComment(id));
+  },
+
+  addNewComment(data) {
+    dispatch(addComment(data));
   }
 });
 

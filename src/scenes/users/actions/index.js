@@ -52,3 +52,9 @@ export const initPhotoUser = id => {
       });
   };
 };
+
+export const deletePostsUser = data => {
+  return dispatch => {
+    dispatch({ type: types.DELETE_POSTS_USER, data: data });
+  };
+};

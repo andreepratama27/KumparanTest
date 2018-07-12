@@ -23,6 +23,7 @@ class PhotoComponent extends Component {
             photos.photos.map((v, keys) => (
               <div className="column is-2 column-photo" key={keys}>
                 <img src={v.thumbnailUrl} />
+                <div className="img-name">{v.title}</div>
               </div>
             ))}
         </div>

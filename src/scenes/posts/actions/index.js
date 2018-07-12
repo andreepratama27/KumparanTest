@@ -40,3 +40,15 @@ export const initComment = id => {
       });
   };
 };
+
+export const addComment = data => {
+  return dispatch => {
+    dispatch({ type: types.ADD_COMMENT, data });
+  };
+};
+
+export const deleteComment = data => {
+  return dispatch => {
+    dispatch({ type: types.DELETE_COMMENT, data });
+  };
+};

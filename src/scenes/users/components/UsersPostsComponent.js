@@ -10,6 +10,12 @@ class UsersPostsComponent extends Component {
     getUserPosts(params.id);
   }
 
+  _deletePosts(data) {
+    const { deletePostsUser } = this.props;
+
+    deletePostsUser(data);
+  }
+
   render() {
     const {
       user: { userPosts }
@@ -17,7 +23,7 @@ class UsersPostsComponent extends Component {
 
     return (
       <Fragment>
-        <div className="columns set-wrap">
+        <div className="columns set-wrap set-column-height">
           {userPosts &&
             userPosts.map((v, keys) => (
               <div className="column is-3" key={keys}>
@@ -32,7 +38,15 @@ class UsersPostsComponent extends Component {
                     <a href="#" className="card-footer-item">
                       Edit
                     </a>
-                    <a href="#" className="card-footer-item">
+                    <a
+                      className="card-footer-item"
+                      onClick={() =>
+                        this._deletePosts({
+                          id: v.id,
+                          idUser: this.props.match.params.id
+                        })
+                      }
+                    >
                       Delete
                     </a>
                   </footer>
