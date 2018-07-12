@@ -2,7 +2,9 @@ import * as types from "@scenes/users/actions/actionTypes";
 
 const initialState = {
   oneUser: [],
-  userPosts: []
+  userPosts: [],
+  userAlbums: [],
+  userPhotos: []
 };
 
 const reducers = (state = [], action) => {
@@ -16,6 +18,18 @@ const reducers = (state = [], action) => {
     case types.INIT_POSTS_USER: {
       return Object.assign({}, state, {
         userPosts: action.data
+      });
+    }
+
+    case types.INIT_ALBUM_USER: {
+      return Object.assign({}, state, {
+        userAlbums: action.data
+      });
+    }
+
+    case types.INIT_PHOTO_USER: {
+      return Object.assign({}, state, {
+        userPhotos: action.data
       });
     }
 

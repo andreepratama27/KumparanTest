@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class UsersComponent extends Component {
   render() {
@@ -19,7 +20,7 @@ class UsersComponent extends Component {
 
         <div className="columns">
           <div className="column">
-            <h1>Users</h1>
+            <h1>All Users</h1>
           </div>
         </div>
         <div className="columns">
@@ -32,6 +33,7 @@ class UsersComponent extends Component {
                   <th>Phone Number</th>
                   <th>Website</th>
                   <th>Company</th>
+                  <th>Option</th>
                 </tr>
               </thead>
               <tbody>
@@ -43,6 +45,9 @@ class UsersComponent extends Component {
                       <td>{v.phone}</td>
                       <td>{v.website}</td>
                       <td>{v.company.name}</td>
+                      <td>
+                        <Link to={`/user/${v.id}`}>View</Link>
+                      </td>
                     </tr>
                   ))}
               </tbody>

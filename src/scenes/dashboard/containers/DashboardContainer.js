@@ -1,10 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import DashboardComponent from "@scenes/dashboard/components/DashboardComponent";
-import { initUsers, initPosts } from "@scenes/dashboard/actions/";
+import { initUsers, initPosts, searchUser } from "@scenes/dashboard/actions/";
 
 const mapStateToProps = state => ({
   dashboard: state.dashboard
 });
 
-export default connect(mapStateToProps)(DashboardComponent);
+const mapDispatchToProps = dispatch => ({
+  search(data) {
+    dispatch(searchUser(data));
+  }
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DashboardComponent);

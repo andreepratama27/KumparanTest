@@ -25,6 +25,21 @@ main.content {
   height: 100%;
 }
 
+.link {
+  display: flex !important;
+  align-items: center;
+  font-size: 16px;
+  height: 3.4rem;
+}
+
+.icon-no-margin {
+  width: 2rem;
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 .panel-block--list {
   height: 18rem;
   overflow-y: scroll;
@@ -41,6 +56,19 @@ main.content {
       color: cornflowerblue;
     }
   }
+}
+
+figure.image-full {
+  margin: 0;
+}
+
+.set-wrap {
+  flex-wrap: wrap !important;
+}
+
+.set-height-for-albums {
+  height: 34rem;
+  overflow-y: scroll;
 }
 
 /* users detail */
@@ -103,4 +131,36 @@ main.content {
 .wrapper-table-posts {
   height: 30rem;
   overflow-y: scroll;
+}
+
+.wrapper-photo {
+  height: 34rem;
+  overflow-y: scroll;
+}
+
+.set-column-height {
+  height: 34rem;
+  overflow-y: scroll;
+}
+
+.column-body p {
+  line-height: 28px;
+}
+
+.list-comment {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px dashed #dadada;
+}
+
+.box-comment {
+  margin-top: 14px;
+}
+
+.title-comment {
+  margin-top: 12px;
+}
+
+.add-spacing {
+  margin: 14px 0;
 }

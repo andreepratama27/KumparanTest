@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 class UsersPostsComponent extends Component {
   componentDidMount() {
@@ -9,8 +9,39 @@ class UsersPostsComponent extends Component {
 
     getUserPosts(params.id);
   }
+
   render() {
-    return <h1>Users post component</h1>;
+    const {
+      user: { userPosts }
+    } = this.props;
+
+    return (
+      <Fragment>
+        <div className="columns set-wrap">
+          {userPosts &&
+            userPosts.map((v, keys) => (
+              <div className="column is-3" key={keys}>
+                <div className="card">
+                  <header className="card-header">
+                    <p className="card-header-title">{v.title}</p>
+                  </header>
+                  <div className="card-content">
+                    <div className="content">{v.body}</div>
+                  </div>
+                  <footer className="card-footer">
+                    <a href="#" className="card-footer-item">
+                      Edit
+                    </a>
+                    <a href="#" className="card-footer-item">
+                      Delete
+                    </a>
+                  </footer>
+                </div>
+              </div>
+            ))}
+        </div>
+      </Fragment>
+    );
   }
 }
 

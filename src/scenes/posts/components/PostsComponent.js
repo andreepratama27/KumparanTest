@@ -1,6 +1,23 @@
 import React, { Component } from "react";
+import { API } from "@services/APIServices";
+import { Link } from "react-router-dom";
 
 class PostsComponent extends Component {
+  componentDidMount() {
+    this._deletePosts = this._deletePosts.bind(this);
+  }
+
+  _deletePosts(v) {
+    API()
+      .delete(`/posts/${v.id}`)
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   render() {
     const { dashboard } = this.props;
 
@@ -19,11 +36,11 @@ class PostsComponent extends Component {
 
         <div className="columns">
           <div className="column">
-            <h1>Posts</h1>
-            <button className="button is-primary">
+            <h1>All Posts</h1>
+            <Link to={`/post/add`} className="button is-primary">
               <span className="fa fa-plus" />
               &nbsp; Add new post
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -44,9 +61,16 @@ class PostsComponent extends Component {
                       <td>{v.title}</td>
                       <td>{v.body.substring(0, 100)}</td>
                       <td>
+                        <Link to={`/post/show/${v.id}`}>View</Link>
+                        <span>&nbsp;|&nbsp;</span>
                         <a>Edit</a>
                         <span>&nbsp;|&nbsp;</span>
-                        <a className="is-danger">Delete</a>
+                        <a
+                          className="is-danger"
+                          onClick={() => this._deletePosts(v)}
+                        >
+                          Delete
+                        </a>
                       </td>
                     </tr>
                   ))}

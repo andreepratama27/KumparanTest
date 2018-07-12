@@ -1,7 +1,14 @@
 import React, { Component } from "react";
+import AlbumGrid from "@components/AlbumGrid";
 
-class Albums extends Component {
+class AlbumsComponent extends Component {
   render() {
+    const {
+      dashboard: { albums }
+    } = this.props;
+
+    console.log(albums);
+
     return (
       <main className="column content">
         <nav className="breadcrumb" aria-label="breadcrumbs">
@@ -17,12 +24,18 @@ class Albums extends Component {
 
         <div className="columns">
           <div className="column">
-            <h1>Albums</h1>
+            <h1>All Albums</h1>
           </div>
+        </div>
+
+        <div className="columns set-wrap set-height-for-albums">
+          {albums.map((v, keys) => (
+            <AlbumGrid key={keys} {...v} {...this.props} all={true} />
+          ))}
         </div>
       </main>
     );
   }
 }
 
-export default Albums;
+export default AlbumsComponent;

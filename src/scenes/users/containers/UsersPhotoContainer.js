@@ -1,19 +1,19 @@
 import React, { Component } from "react";
+import UsersPhotoComponent from "@scenes/users/components/UsersPhotoComponent";
 import { connect } from "react-redux";
-import { initPostsUser } from "@scenes/users/actions/";
-import UsersPostsComponent from "@scenes/users/components/UsersPostsComponent";
+import { initPhotoUser } from "@scenes/users/actions/";
 
 const mapStateToProps = state => ({
   user: state.user
 });
 
 const mapDispatchToProps = dispatch => ({
-  getUserPosts(data) {
-    dispatch(initPostsUser(data));
+  getUserPhotos(id) {
+    dispatch(initPhotoUser(id));
   }
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UsersPostsComponent);
+)(UsersPhotoComponent);

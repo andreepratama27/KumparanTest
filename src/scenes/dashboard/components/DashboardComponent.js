@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import Breadcrumb from "@components/Breadcrumb";
 
 class DashboardComponent extends Component {
+  _triggerSearch(e) {
+    this.props.search(e.target.value);
+  }
+
   render() {
     const { dashboard } = this.props;
 
@@ -39,7 +43,12 @@ class DashboardComponent extends Component {
               <p className="panel-heading">Users</p>
               <div className="panel-block">
                 <p className="control has-icons-left">
-                  <input className="input" type="text" placeholder="Search" />
+                  <input
+                    className="input"
+                    type="text"
+                    placeholder="Search"
+                    onChange={e => this._triggerSearch(e)}
+                  />
                   <span className="icon is-small is-left">
                     <i className="fa fa-search" aria-hidden="true" />
                   </span>
