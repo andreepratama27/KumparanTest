@@ -26,6 +26,17 @@ const reducers = (state = initialState, action) => {
       });
     }
 
+    case types.SEARCH_USER: {
+      let updatedUsers = state.users;
+      updatedUsers = updatedUsers.filter(
+        v => v.name.toLowerCase().search(action.data.toLowerCase()) !== -1
+      );
+
+      return Object.assign({}, state, {
+        users: updatedUsers
+      });
+    }
+
     default: {
       return state;
     }

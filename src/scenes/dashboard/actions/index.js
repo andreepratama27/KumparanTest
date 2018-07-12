@@ -27,12 +27,19 @@ export const initPosts = () => {
 
 export const initAlbums = () => {
   return dispatch => {
-    API("albums")
+    API()
+      .get("albums")
       .then(res => {
         dispatch({ type: types.INIT_ALBUMS, data: res.data });
       })
       .catch(err => {
         console.log(err);
       });
+  };
+};
+
+export const searchUser = data => {
+  return dispatch => {
+    dispatch({ type: types.SEARCH_USER, data });
   };
 };

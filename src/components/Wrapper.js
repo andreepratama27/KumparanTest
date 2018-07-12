@@ -10,34 +10,39 @@ const Wrapper = ({ children }) => (
             <p className="menu-label">General</p>
             <ul className="menu-list">
               <li>
-                <Link to="/">Dashboard</Link>
+                <Link to="/" className="link">
+                  <div className="icon-no-margin">
+                    <i className="fa fa-tachometer-alt" />
+                  </div>
+                  Dashboard
+                </Link>
               </li>
             </ul>
             <p className="menu-label">Administrator</p>
             <ul className="menu-list">
               <li>
-                <Link to="/users">Users</Link>
-                <ul>
-                  <li>
-                    <a>Manage Users</a>
-                  </li>
-                </ul>
+                <Link to="/users" className="link">
+                  <div className="icon-no-margin">
+                    <i className="fa fa-users" />
+                  </div>
+                  Users
+                </Link>
               </li>
               <li>
-                <Link to="/posts">Posts</Link>
-                <ul>
-                  <li>
-                    <a>Manage Posts</a>
-                  </li>
-                </ul>
+                <Link to="/posts" className="link">
+                  <div className="icon-no-margin">
+                    <i className="fa fa-clipboard" />
+                  </div>
+                  Posts
+                </Link>
               </li>
               <li>
-                <Link to="/albums">Albums</Link>
-                <ul>
-                  <li>
-                    <a>Manage Albums</a>
-                  </li>
-                </ul>
+                <Link to="/albums" className="link">
+                  <div className="icon-no-margin">
+                    <span className="fa fa-image" />
+                  </div>
+                  Albums
+                </Link>
               </li>
             </ul>
           </nav>

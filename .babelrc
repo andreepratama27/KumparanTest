@@ -1,16 +1,10 @@
 {
-  "presets": [
-    "env",
-    "react",
-    "es2017"
-  ],
+  "presets": ["env", "react", "es2017"],
   "plugins": [
     [
       "module-resolver",
       {
-        "root": [
-          "./"
-        ],
+        "root": ["./"],
         "alias": {
           "@assets": "./src/assets",
           "@components": "./src/components",
@@ -20,6 +14,7 @@
           "@styles": "./src/styles"
         }
       }
-    ]
+    ],
+    ["transform-object-rest-spread"]
   ]
 }

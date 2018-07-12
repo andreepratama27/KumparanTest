@@ -1,1 +1,4 @@
 export const INIT_ONE_USER = "INIT_ONE_USER";
+export const INIT_POSTS_USER = "INIT_POSTS_USER";
+export const INIT_ALBUM_USER = "INIT_ALBUM_USER";
+export const INIT_PHOTO_USER = "INIT_PHOTO_USER";
