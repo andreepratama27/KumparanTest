@@ -17,27 +17,12 @@ const Wrapper = ({ children }) => (
             <ul className="menu-list">
               <li>
                 <Link to="/users">Users</Link>
-                <ul>
-                  <li>
-                    <a>Manage Users</a>
-                  </li>
-                </ul>
               </li>
               <li>
                 <Link to="/posts">Posts</Link>
-                <ul>
-                  <li>
-                    <a>Manage Posts</a>
-                  </li>
-                </ul>
               </li>
               <li>
                 <Link to="/albums">Albums</Link>
-                <ul>
-                  <li>
-                    <a>Manage Albums</a>
-                  </li>
-                </ul>
               </li>
             </ul>
           </nav>

@@ -6,8 +6,30 @@ import UsersContainer from "./scenes/users/containers/UsersContainer";
 import UsersDetailContainer from "./scenes/users/containers/UsersDetailContainer";
 import PostsContainer from "./scenes/posts/containers/PostsContainer";
 import Albums from "./scenes/albums/components/Albums";
+import { connect } from "react-redux";
+
+import { initUsers, initPosts } from "@scenes/dashboard/actions/";
+
+const mapStateToProps = state => ({
+  dashboard: state.dashboard
+});
+
+const mapDispatchToProps = dispatch => ({
+  getAllUsers() {
+    dispatch(initUsers());
+  },
+
+  getAllPosts() {
+    dispatch(initPosts());
+  }
+});
 
 class App extends Component {
+  componentDidMount() {
+    this.props.getAllUsers();
+    this.props.getAllPosts();
+  }
+
   render() {
     return (
       <Router>
@@ -26,4 +48,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

@@ -3,11 +3,6 @@ import { Link } from "react-router-dom";
 import Breadcrumb from "@components/Breadcrumb";
 
 class DashboardComponent extends Component {
-  componentDidMount() {
-    this.props.getAllUsers();
-    this.props.getAllPosts();
-  }
-
   render() {
     const { dashboard } = this.props;
 

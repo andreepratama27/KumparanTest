@@ -22,6 +22,7 @@ aside.sidemenu {
 
 main.content {
   padding: 20px;
+  height: 100%;
 }
 
 .panel-block--list {
@@ -62,7 +63,7 @@ main.content {
 
 .image-place,
 .description-place {
-  height: 14rem;
+  height: 10rem;
 }
 
 .image-place {
@@ -96,4 +97,10 @@ main.content {
       font-weight: lighter;
     }
   }
+}
+
+/* posts pages */
+.wrapper-table-posts {
+  height: 30rem;
+  overflow-y: scroll;
 }

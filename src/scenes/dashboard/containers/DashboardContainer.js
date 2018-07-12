@@ -7,17 +7,4 @@ const mapStateToProps = state => ({
   dashboard: state.dashboard
 });
 
-const mapDispatchToProps = dispatch => ({
-  getAllUsers() {
-    dispatch(initUsers());
-  },
-
-  getAllPosts() {
-    dispatch(initPosts());
-  }
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DashboardComponent);
+export default connect(mapStateToProps)(DashboardComponent);

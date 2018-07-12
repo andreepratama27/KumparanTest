@@ -20,15 +20,21 @@ class PostsComponent extends Component {
         <div className="columns">
           <div className="column">
             <h1>Posts</h1>
+            <button className="button is-primary">
+              <span className="fa fa-plus" />
+              &nbsp; Add new post
+            </button>
           </div>
         </div>
 
         <div className="columns">
-          <div className="column is-12">
-            <table className="table">
+          <div className="column is-12 wrapper-table-posts">
+            <table className="table ">
               <thead>
                 <tr>
                   <th>Title</th>
+                  <th>Content</th>
+                  <th>Option</th>
                 </tr>
               </thead>
               <tbody>
@@ -36,6 +42,12 @@ class PostsComponent extends Component {
                   dashboard.posts.map((v, keys) => (
                     <tr key={keys}>
                       <td>{v.title}</td>
+                      <td>{v.body.substring(0, 100)}</td>
+                      <td>
+                        <a>Edit</a>
+                        <span>&nbsp;|&nbsp;</span>
+                        <a className="is-danger">Delete</a>
+                      </td>
                     </tr>
                   ))}
               </tbody>

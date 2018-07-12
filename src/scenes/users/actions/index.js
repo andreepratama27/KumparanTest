@@ -13,3 +13,16 @@ export const initOneUser = id => {
       });
   };
 };
+
+export const initPostsUser = id => {
+  return dispatch => {
+    API()
+      .get(`posts?userId=${id}`)
+      .then(res => {
+        dispatch({ type: types.INIT_POSTS_USER, data: res.data });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+};
